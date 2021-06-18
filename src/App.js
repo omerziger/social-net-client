@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { makeStyles } from '@material-ui/core';
+import Navbar from './components/navbar/Navbar';
+import Feed from './components/feed/Feed';
+import ChatBar from './components/chatBar/ChatBar';
 
-function App() {
+export default function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.root}>
+      <Navbar />
+      <Feed />
+      <ChatBar />
     </div>
   );
 }
 
-export default App;
+const useStyles = makeStyles({
+  root: {
+    background: '#f7f7f7',
+  },
+});
